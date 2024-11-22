@@ -6,14 +6,14 @@ public class JogoAdivinhacao {
 
         Scanner leitura = new Scanner(System.in);
         int numeroSorteado = new Random().nextInt(50) + 1;
-        int numeroChance = 1;
+        int tentativa = 1;
         int numeroEscolhidoUsuario = 0;
 
         System.out.println("Olá, bem vindo ao jogo de adivinhação ");
         System.out.println("Temos um número de 1 até 50, e você tem 5 tentativas... ");
 
-        while (numeroChance <= 5) {
-            System.out.println(String.format("Tentativa %d de 5. Digite o próximo número: ", numeroChance));
+        while (tentativa <= 5) {
+            System.out.println(String.format("Tentativa %d de 5. Digite o próximo número: ", tentativa));
             numeroEscolhidoUsuario = leitura.nextInt();
 
             if (numeroEscolhidoUsuario == numeroSorteado) {
@@ -24,10 +24,10 @@ public class JogoAdivinhacao {
             } else {
                 System.out.println("Errou. O numero sorteado é maior.");
             }
-            numeroChance++;
+            tentativa++;
         }
 
-        if (numeroChance > 5) {
+        if (tentativa > 5) {
             System.out.println("Que pena! Você perdeu. O número sorteado era " + numeroSorteado);
         }
 
